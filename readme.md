@@ -9,6 +9,7 @@
 - 코드를 더 적게 사용할 수 있다.(사용성 향상)
  1) 예시 : 데이터를 담는 데이터 클래스 생성
 ```java
+    //자바
     public class Data {
         private String stringData;
         private int intData;
@@ -31,12 +32,14 @@
     }
 ```
 ```kotlin
+    //코틀린
     data class Data(var stringData:String, var intData:Int)
 ```
 - null point exception에 대한 쉬운 대비 가능
 - 함수형 언어의 형태 차용
 1) 예시 : onClickListener
 ```java
+    //자바
     Button btn = new Button(this);
     btn.setOnClickListener(new View.OnClickListener(){
         public void onClick(View v){
@@ -45,6 +48,7 @@
     });
 ```
 ```kotlin
+    //코틀린
     val button = Button(this);
     button.setOnClickListener {
 
