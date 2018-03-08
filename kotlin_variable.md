@@ -1,4 +1,4 @@
-# 코를린 키워드 알아보기
+# 코틀린 변수
 
 ## 1. 변수
  1) var
@@ -15,6 +15,4 @@
   - 변수 타입을 쓰지 않아도 어떤 인자가 대입되는지를 자동으로 파악하여 타입이 정해진다.(스마트 타입 캐스팅)
   - 하지만, 변수 타입을 써주어도 동작한다.
 
-## 2. 클래스
-  [코틀린의 클래스 알아보기](https://github.com/pleasantlife/SayHelloToKotlin/blob/master/kotlin_class.md)
 

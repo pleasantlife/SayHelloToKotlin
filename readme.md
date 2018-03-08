@@ -57,4 +57,5 @@
 - 상속 받지 않고도 가능한, 클래스의 확장
 
 ## 3. 코틀린 키워드 
- - [코틀린 키워드](http://github.com/pleasantlife/SayHelloToKotlin/master/kotlin_keyword.md)
+ - [코틀린 변수](http://github.com/pleasantlife/SayHelloToKotlin/blob/master/kotlin_variable.md)
+ - [코틀린 클래스](http://github.com/pleasantlife/SayHelloToKotlin/blob/master/kotlin_class.md)
