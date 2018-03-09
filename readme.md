@@ -59,3 +59,4 @@
 ## 3. 코틀린 키워드 
  - [코틀린 변수](http://github.com/pleasantlife/SayHelloToKotlin/blob/master/kotlin_variable.md)
  - [코틀린 클래스](http://github.com/pleasantlife/SayHelloToKotlin/blob/master/kotlin_class.md)
+ - [코틀린 함수](http://github.com/pleasantlife/SayHelloToKotlin/blob/master/kotlin_function.md)

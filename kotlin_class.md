@@ -52,6 +52,12 @@ public class Person {
 ```kotlin
 class Person constructor(name:String, age:Int)
 ```
+- 단, 'constructor' 키워드는 생략할 수 있다.
+```kotlin
+class Person(name:String, age:Int){
+  //TODO
+}
+```
  - 클래스에서 생성자를 여러개 선언해야 하는 경우
 ```java
 //기본 생성자의 인자가 없는 경우
@@ -92,3 +98,7 @@ class Person{
   constructor(name:String, age:Int):this(name)
 }
 ```
+
+## 3. 데이터 클래스
+- 코틀린에는 데이터의 그릇이 되는 데이터 클래스를 별도로 생성할 수 있다.
+
