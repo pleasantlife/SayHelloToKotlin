@@ -100,5 +100,21 @@ class Person{
 ```
 
 ## 3. 데이터 클래스
-- 코틀린에는 데이터의 그릇이 되는 데이터 클래스를 별도로 생성할 수 있다.
+- 코틀린에는 데이터의 그릇이 되는 데이터 클래스를 별도로 제공하여 이를 이용해서 데이터 클래스를 생성하는 것이 가능하다.
+```java
+public class Person(){
 
+  private String name;
+  private int age;
+}
+```
+```kotlin
+data class Person(var name: String, var age: Int)
+```
+- 코틀린에서 get/set을 사용하지 않고, 직접 접근하여 사용한다.
+```kotlin
+val person : Person = Person("이름", 16)
+val personName: String = person.name
+val personAge: int = person.age
+```
+- 데이터 클래스는 최소 한 개의 값을 생성자에 추가해주어야 한다.
