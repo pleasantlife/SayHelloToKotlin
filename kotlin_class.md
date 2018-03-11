@@ -52,7 +52,7 @@ public class Person {
 ```kotlin
 class Person constructor(name:String, age:Int)
 ```
-- 단, 'constructor' 키워드는 생략할 수 있다.
+- 단, 키워드 앞에 private, protected, public 등의 키워드나 어노테이션이 없을 경우 'constructor' 키워드는 생략할 수 있다.
 ```kotlin
 class Person(name:String, age:Int){
   //TODO
@@ -92,10 +92,21 @@ class Person {
   constructor(name:String, age:Int):this()
 }
 
-//기본 생성자의 인자가 있는 경우
+//기본 생성자의 인자가 있는 경우(보조생성자)
 class Person{
 
   constructor(name:String, age:Int):this(name)
+}
+```
+- 기본 생성자는 코드 블록을 가질 수 없어서, init{} 블록을 통해 초기화할 수 있다.
+```kotlin
+class Person (name:String, age:Int){
+  var age : Int = 30
+
+  init{
+    this.age = age
+  }
+  
 }
 ```
 
@@ -118,3 +129,37 @@ val personName: String = person.name
 val personAge: int = person.age
 ```
 - 데이터 클래스는 최소 한 개의 값을 생성자에 추가해주어야 한다.
+
+## 4. 상속
+- 코틀린에서 클래스는 명시적으로 부모클래스를 가지지 않으면, Any 클래스를 상속받는다.
+- Any클래스는 equal(), hashCode(), toString() 이외의 다른 멤버를 가지지 않는 클래스이다.
+- 코틀린에서 클래스는 기본적으로 final 클래스이기 때문에, 상속을 할 수 있게 하려면 open 키워드를 사용해야 한다.
+```kotlin
+open class Person(name:String, age:Int) {
+
+}
+
+class Man(weight:Int) : Person(name, age){
+
+}
+```
+- 클래스를 상속할 때에는 ':'(콜론)을 사용한다. 이는 자바의 extends와 같다.
+- 자바에서는 인터페이스와 클래스를 각각 implement와 extends로 구분하지만, 코틀린의 상속에서는 따로 구분하지 않고 ':'과 ','를 사용하여 함께 상속한다.
+```kotlin
+open class Person(name:String, age:Int){
+
+}
+
+interface SayHello {
+  fun hello(word:String){
+    print("hello"+word)
+  }
+}
+
+class Man(weight:Int) : Person, SayHello {
+
+  override fun hello(word:String){
+    //TODO
+  }
+}
+```  
