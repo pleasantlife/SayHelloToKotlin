@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.widget.TextView
+import com.gandan.android.kotlinbasicpractice.Adapter.TestAdapter
 import com.gandan.android.kotlinbasicpractice.Model.Person
 
 
@@ -28,6 +29,9 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
         Log.e("getText", txtTest.text.toString()+"")
         Log.e("color", color.toString()+"");
         var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        var adapter = TestAdapter()
+        recyclerView.adapter = adapter
+
     }
 
 }
