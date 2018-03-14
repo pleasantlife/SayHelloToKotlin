@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.graphics.Typeface
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.widget.TextView
@@ -30,8 +31,9 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
         Log.e("color", color.toString()+"");
         var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         var adapter = TestAdapter()
+        var layoutManager : LinearLayoutManager
         recyclerView.adapter = adapter
-
+        recyclerView.layoutManager = layoutManager
     }
 
 }
