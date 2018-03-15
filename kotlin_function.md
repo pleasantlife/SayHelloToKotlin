@@ -6,7 +6,6 @@
 fun 함수명(변수명 : 변수 타입) : 리턴 타입 { 로직과 리턴 값 }
 ```
 
-```
 - 생성 예시
 ```kotlin
 fun hello(world : String): String {
@@ -24,7 +23,9 @@ fun hello(world : String): String = world + "Every One"
 public String hello(String world){
     return world + "Every One!";
 }
+```
 
-- 함수에 기본값 '='을 사용하면 defalut가 자동으로 사용되게 된다.
+- 함수에 기본값 '='을 사용하면 default가 자동으로 사용되게 된다.
 ```kotlin
 fun hello(word: String = "!!!");
+```

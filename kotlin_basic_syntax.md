@@ -43,19 +43,42 @@ fun getStringLength(obj: Any): Int? {
 }
 ```
 
-## 3. for문
-- 파이썬과 유사한 형태의 for문을 사용한다.
+## 3. for문과 while문
+- 파이썬과 유사한 형태의 for문과 while문을 사용한다.
 ```kotlin
+//for문
 val arrayList = ArrayList<String>()
 for (string in arrayList) {
     Log.d("String", string+"")
 }
+
+//while문
+val items = listOf("apple", "banana", "kiwi")
+var index = 0
+while(index < items.size) {
+    println("item at $index is ${items[index]}")
+    index++
+}
 ```
+
+
 
 ## 4. ranges
 - 숫자의 범위를 지정할 떄 시작하는 숫자와 끝나는 숫자 사이에 온점 두개를 찍어 사용하며, if문에서도 사용 가능하다.
 ```kotlin
 for (x in 1..5){
     Log.d("x", x+"")
+}
+```
+
+## 4. when
+- if문을 중첩하여 사용하지 않을 수 있는 키워드, switch와 유사하다.
+```kotlin
+fun whenUse(obj : Any) {
+    when(obj) {
+        16 -> Log.d("숫자", 16)
+        "Text" -> Log.d("글자", "Text")
+        else -> println("기타")
+    }
 }
 ```
