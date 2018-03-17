@@ -122,11 +122,11 @@ public class Person(){
 ```kotlin
 data class Person(var name: String, var age: Int)
 ```
-- 코틀린에서 get/set을 사용하지 않고, 직접 접근하여 사용한다.
+- 코틀린에서 get/set을 사용하지 않고, 직접 접근하여 사용한다.(코틀린에서 자동으로 생성)
 ```kotlin
-val person : Person = Person("이름", 16)
-val personName: String = person.name
-val personAge: int = person.age
+val person : Person = Person("이름", 16) // val변수이므로 변경 불가(Read-Only)
+var personName: String = person.name //변경 가능
+var personAge: int = person.age // 변경 가능
 ```
 - 데이터 클래스는 최소 한 개의 값을 생성자에 추가해주어야 한다.
 

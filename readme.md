@@ -59,4 +59,5 @@
 ## 3. 코틀린 키워드 
  - [코틀린 기본문법](http://github.com/pleasantlife/SayHelloToKotlin/blob/master/kotlin_basic_syntax.md)
  - [코틀린 클래스](http://github.com/pleasantlife/SayHelloToKotlin/blob/master/kotlin_class.md)
+ - [코틀린 인터페이스](http://github.com/pleasantlife/SayHelloToKotlin/blob/master/kotlin_interface.md)
  - [코틀린 함수](http://github.com/pleasantlife/SayHelloToKotlin/blob/master/kotlin_function.md)
