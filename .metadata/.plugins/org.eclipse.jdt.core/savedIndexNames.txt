@@ -1,0 +1,2 @@
+INDEX VERSION 1.130+C:\workspaces\practice_kotlin\SayHelloToKotlin\.metadata\.plugins\org.eclipse.jdt.core
+864488081.index
