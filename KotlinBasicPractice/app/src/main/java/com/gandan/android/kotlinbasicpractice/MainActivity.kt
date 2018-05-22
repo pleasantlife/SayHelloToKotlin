@@ -10,6 +10,7 @@ import android.util.Log
 import android.widget.TextView
 import com.gandan.android.kotlinbasicpractice.Adapter.TestAdapter
 import com.gandan.android.kotlinbasicpractice.Model.Person
+import com.gandan.android.kotlinbasicpractice.Model.RRPhantom
 
 
 class MainActivity : AppCompatActivity() // Java : class MainActivity extends AppCompatActivity
@@ -30,10 +31,13 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
         Log.e("getText", txtTest.text.toString()+"")
         Log.e("color", color.toString()+"");
         var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-        var adapter = TestAdapter()
-        var layoutManager : LinearLayoutManager
-        recyclerView.adapter = adapter
+        //var adapter = TestAdapter()
+        var layoutManager = LinearLayoutManager(this)
+        //recyclerView.adapter = adapter
         recyclerView.layoutManager = layoutManager
+
+        var phantom = RRPhantom()
+        phantom.logPrice()
     }
 
 }
