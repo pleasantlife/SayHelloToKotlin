@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.widget.TextView
 import com.gandan.android.kotlinbasicpractice.Adapter.TestAdapter
+import com.gandan.android.kotlinbasicpractice.Model.Garage
 import com.gandan.android.kotlinbasicpractice.Model.Person
 import com.gandan.android.kotlinbasicpractice.Model.RRPhantom
 
@@ -31,10 +32,14 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
         Log.e("getText", txtTest.text.toString()+"")
         Log.e("color", color.toString()+"");
         var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-        //var adapter = TestAdapter()
-        var layoutManager = LinearLayoutManager(this)
         //recyclerView.adapter = adapter
-        recyclerView.layoutManager = layoutManager
+        with(recyclerView){
+            layoutManager = LinearLayoutManager(this@MainActivity)
+        }
+
+        var garage = Garage()
+        var door = garage.ride().seatCount
+        Log.e("door", door.toString()+"")
 
         var phantom = RRPhantom()
         phantom.logPrice()
