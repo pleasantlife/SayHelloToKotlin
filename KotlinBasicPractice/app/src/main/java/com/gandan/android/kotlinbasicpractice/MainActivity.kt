@@ -24,10 +24,16 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
         //new 키워드를 사용하지 않고 클래스를 생성한다!
         var person : Person = Person("Peter", 13)
         var txtTest = findViewById<TextView>(R.id.txtTest)
-        txtTest.text = "Hello"
+        txtTest.apply {
+            text = "hello"
+            textSize = 28f
+            typeface = Typeface.DEFAULT_BOLD
+            setTextColor(Color.parseColor("#000000"))
+        }
+       /* txtTest.text = "Hello"
         txtTest.textSize = 28f
         txtTest.typeface = Typeface.DEFAULT_BOLD
-        txtTest.setTextColor(Color.parseColor("#000000"))
+        txtTest.setTextColor(Color.parseColor("#000000"))*/
         var color = txtTest.textColors
         Log.e("getText", txtTest.text.toString()+"")
         Log.e("color", color.toString()+"");
@@ -37,8 +43,7 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
 
-        var garage = Garage()
-        var door = garage.ride().seatCount
+        var door = Garage().ride().seatCount
         Log.e("door", door.toString()+"")
 
         var phantom = RRPhantom()
