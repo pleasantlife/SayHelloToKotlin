@@ -18,6 +18,28 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
 {
     //var : 수정이 가능한 변수, val : 수정이 불가능한 변수(=final)
 
+    //lateinit으로 선언한 변수에 값을 지정하는 것을 '선언 시점'이 아닌 '원하는 상황'으로 유예할 수 있다.
+    lateinit var phantom : RRPhantom
+
+    //lateinit은 val로 선언이 불가능하다. (final 선언 불가)
+    // lateinit val hello : String -> 오류 발생
+
+    //단 lateinit은 primitive type(int 등)은 지원하지 않는다.
+    //lateinit var hello : Int -> 오류 발생
+
+    var hello : Int? = null
+
+    //val : Java의 final과 동일한 역할을 하는 변수 선언
+    val welcome : Int = 16
+
+
+    // by lazy로 val의 lateinit 구현
+    // var에서는 by lazy 사용 불가.
+    val hi : Person by lazy {
+        Person("Kotlin", 3)
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,6 +52,21 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
             typeface = Typeface.DEFAULT_BOLD
             setTextColor(Color.parseColor("#000000"))
         }
+
+        //lateInit이 초기화 되었는지 아닌지 여부를 판단할 수 있다.(코틀린 1.2버전부터 적용)
+        if(!::phantom.isInitialized) {
+            phantom = RRPhantom()
+        }
+
+
+
+
+
+
+
+        // val은 final이기 때문에, 값 변경 불가.
+        // welcome = 279
+
        /* txtTest.text = "Hello"
         txtTest.textSize = 28f
         txtTest.typeface = Typeface.DEFAULT_BOLD
@@ -46,7 +83,8 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
         var door = Garage().ride().seatCount
         Log.e("door", door.toString()+"")
 
-        var phantom = RRPhantom()
+        //위에서 선언한 phantom에 값을 넣어줌.
+        phantom = RRPhantom()
         phantom.logPrice()
     }
 
