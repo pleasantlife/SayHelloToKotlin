@@ -13,9 +13,14 @@ import com.gandan.android.kotlinbasicpractice.Model.Garage
 import com.gandan.android.kotlinbasicpractice.Model.Person
 import com.gandan.android.kotlinbasicpractice.Model.RRPhantom
 
+//Java에서 static에 해당되는 const는 패키지 단위로 선언해야 하기에, 클래스와 import 패키지문 사이에 적는다.
+const val TWENTY_EIGHT= 28f
+
+object Singleton
 
 class MainActivity : AppCompatActivity() // Java : class MainActivity extends AppCompatActivity
 {
+
     //var : 수정이 가능한 변수, val : 수정이 불가능한 변수(=final)
 
     //lateinit으로 선언한 변수에 값을 지정하는 것을 '선언 시점'이 아닌 '원하는 상황'으로 유예할 수 있다.
@@ -32,7 +37,6 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
     //val : Java의 final과 동일한 역할을 하는 변수 선언
     val welcome : Int = 16
 
-
     // by lazy로 val의 lateinit 구현
     // var에서는 by lazy 사용 불가.
     val hi : Person by lazy {
@@ -48,7 +52,7 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
         var txtTest = findViewById<TextView>(R.id.txtTest)
         txtTest.apply {
             text = "hello"
-            textSize = 28f
+            textSize = TWENTY_EIGHT
             typeface = Typeface.DEFAULT_BOLD
             setTextColor(Color.parseColor("#000000"))
         }
@@ -86,6 +90,10 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
         //위에서 선언한 phantom에 값을 넣어줌.
         phantom = RRPhantom()
         phantom.logPrice()
+
+        var single = Singleton
     }
 
 }
+
+
