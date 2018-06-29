@@ -43,6 +43,13 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
         Person("Kotlin", 3)
     }
 
+    //코틀린에서는 배열은 타입 인자를 갖는 Array클래스로 표현한다.
+    var carArray : Array<String> = arrayOf("Phantom", "Range Rover", "Maybach", "McLaren")
+
+    //Primitive type은 코틀린 배열 클래스의 타입 인자로 사용할 수 없다.
+    //var intArray : IntArray = arrayOf(0,1,2,3,4,5) <- 에러 발생
+    var intArray : IntArray = intArrayOf(0,1,2,3,4,5)
+    var floatArray : Array<Float> = arrayOf(0.1f, 0.2f, 0.3f, 0.4f, 0.5f)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
