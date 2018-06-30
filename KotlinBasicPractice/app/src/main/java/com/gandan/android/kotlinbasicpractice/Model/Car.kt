@@ -23,6 +23,4 @@ open class Car(var seats:Int) {
     }
 
 
-
-
 }

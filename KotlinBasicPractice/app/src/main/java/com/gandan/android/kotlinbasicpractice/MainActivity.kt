@@ -9,9 +9,11 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.widget.TextView
 import com.gandan.android.kotlinbasicpractice.Adapter.TestAdapter
+import com.gandan.android.kotlinbasicpractice.Model.Car
 import com.gandan.android.kotlinbasicpractice.Model.Garage
 import com.gandan.android.kotlinbasicpractice.Model.Person
 import com.gandan.android.kotlinbasicpractice.Model.RRPhantom
+import kotlinx.android.synthetic.main.activity_main.*
 
 //Java에서 static에 해당되는 const는 패키지 단위로 선언해야 하기에, 클래스와 import 패키지문 사이에 적는다.
 const val TWENTY_EIGHT= 28f
@@ -46,6 +48,8 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
     //코틀린에서는 배열은 타입 인자를 갖는 Array클래스로 표현한다.
     var carArray : Array<String> = arrayOf("Phantom", "Range Rover", "Maybach", "McLaren")
 
+    lateinit var carList : ArrayList<Car>
+
     //Primitive type은 코틀린 배열 클래스의 타입 인자로 사용할 수 없다.
     //var intArray : IntArray = arrayOf(0,1,2,3,4,5) <- 에러 발생
     var intArray : IntArray = intArrayOf(0,1,2,3,4,5)
@@ -67,6 +71,14 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
         //lateInit이 초기화 되었는지 아닌지 여부를 판단할 수 있다.(코틀린 1.2버전부터 적용)
         if(!::phantom.isInitialized) {
             phantom = RRPhantom()
+        }
+
+        //with를 이용해 변수가 포함하고 있는 속성을 정의해줄 수 있다.
+        with(recyclerView){
+            //초기화 여부 확인하여 초기화가 되어있으면 어댑터를 연결함.
+            if(::carList.isInitialized)
+            adapter = TestAdapter(this@MainActivity, carList)
+            layoutManager = LinearLayoutManager(this@MainActivity)
         }
 
 
