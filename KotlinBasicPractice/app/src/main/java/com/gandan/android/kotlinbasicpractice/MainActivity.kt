@@ -73,13 +73,25 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
             phantom = RRPhantom()
         }
 
+        var testAdapter = TestAdapter(this@MainActivity, carList)
+
         //with를 이용해 변수가 포함하고 있는 속성을 정의해줄 수 있다.
         with(recyclerView){
             //초기화 여부 확인하여 초기화가 되어있으면 어댑터를 연결함.
             if(::carList.isInitialized)
-            adapter = TestAdapter(this@MainActivity, carList)
+            adapter = testAdapter
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
+
+        //let을 쓰면 testAdapter를 블록의 인자(it)으로 넘기고, 그 인자의 마지막 결과값을 반환한다.
+        //값이 있는 경우, 추가로 코드를 수행.
+        testAdapter.let { it.notifyDataSetChanged() }
+
+        //apply는 결과값 자체를 반환한다.
+        testAdapter.apply { notifyDataSetChanged()  }
+
+        //let과 with의 합성.
+        testAdapter.run { notifyDataSetChanged() }
 
 
 
