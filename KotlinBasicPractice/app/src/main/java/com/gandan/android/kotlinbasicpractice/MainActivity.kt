@@ -118,11 +118,27 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
         var door = Garage().ride().seatCount
         Log.e("door", door.toString()+"")
 
+        when(door){
+            4 -> Log.e("세단", "${door}도어")
+            5 -> Log.e("SUV", "${door}도어")
+            else -> Log.e("문 수", door.toString())
+        }
+
         //위에서 선언한 phantom에 값을 넣어줌.
         phantom = RRPhantom()
         phantom.logPrice()
 
-        var single = Singleton
+        //코틀린에서의 캐스팅은 as 연산자를 사용한다.
+        //단, 자료형 추론이 가능할 경우에는 별도로 캐스팅을 하지 않아도 알아서 캐스팅 해주는 '스마트 캐스트'를 지원한다.
+        var doorString = door as String
+
+
+        //코틀린에서는 for문 내에서 현재 항목의 인덱스가 필요할 경우, Collection.indicies를 사용하여 항목에 접근 가능.
+        if(::carList.isInitialized){
+            for(i in carList.indices){
+                Log.e("carList[i]", carList[i].name)
+            }
+        }
     }
 
 }
