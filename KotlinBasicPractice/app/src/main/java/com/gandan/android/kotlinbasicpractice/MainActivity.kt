@@ -139,6 +139,17 @@ class MainActivity : AppCompatActivity() // Java : class MainActivity extends Ap
                 Log.e("carList[i]", carList[i].name)
             }
         }
+
+        //코틀린에서는 List타입의 첫번째 인자와 마지막 인자를 꺼낼 수 있다.
+        var firstCar = carList.first()
+
+        //forEach문을 돌지 않아도 내부에서 필터링도 가능!
+        var firstFiveSeatrCar = carList.first { car -> car.seats >= 5 }
+
+        //마지막 인자 꺼내기
+        var lastCar = carList.last()
+
+        var lastFiveSeatCar = carList.last{ it.seats >= 5 }
     }
 
 }
