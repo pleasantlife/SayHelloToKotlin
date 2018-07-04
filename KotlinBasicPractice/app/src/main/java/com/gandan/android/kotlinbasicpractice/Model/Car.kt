@@ -1,6 +1,7 @@
 package com.gandan.android.kotlinbasicpractice.Model
 
 import android.util.Log
+import org.jetbrains.annotations.Nullable
 
 /**
  * Created by XPS on 2018-03-05.
@@ -13,6 +14,7 @@ open class Car(var seats:Int) {
 
     var seatCount = 0
     lateinit var name : String
+    var driver : String? = null
 
     constructor(seats:Int, name:String, doors:Int):this(seats){
         Log.e("seats", seats.toString()+"")
